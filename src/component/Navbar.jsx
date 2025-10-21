@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import {  Link, NavLink } from 'react-router';
 import logo from '../assets/logo.png'
 
 const Navbar = () => {
@@ -15,7 +15,10 @@ const Navbar = () => {
       <ul
         tabIndex="-1"
         className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-       <li><Link to="/home">Home</Link></li>
+       <li><NavLink
+         className={({ isActive }) =>
+         (isActive ? "active" : "")}
+        to="/home">Home</NavLink></li>
        
        
       </ul>
@@ -26,12 +29,17 @@ const Navbar = () => {
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
-      <li><Link to="/home">Home</Link></li>
+     <li><NavLink
+         className={({ isActive }) =>
+         (isActive ? "active" : "")}
+        to="/home">Home</NavLink></li>
       
     </ul>
   </div>
   <div className="navbar-end">
-    <a className="btn">My Profile</a>
+    <Link to="/auth/login" className="btn btn-primary px-4">
+            Login
+          </Link>
   </div>
 </div>
     );

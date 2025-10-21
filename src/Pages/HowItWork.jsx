@@ -11,7 +11,7 @@ const HowItWork = () => {
 
 
     return (
-       <section className="py-16 bg-gradient-to-r from-blue-50 via-blue-100 to-blue-50">
+       <section className="py-16 ">
       <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
         How It Works
       </h2>
@@ -23,13 +23,13 @@ const HowItWork = () => {
             data-aos="fade-up"
             className="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300"
           >
-            {/* Icon */}
+          
             <div className="text-6xl mb-4">{step.icon}</div>
 
-            {/* Title */}
+         
             <h3 className="text-2xl font-semibold mb-2">{step.title}</h3>
 
-            {/* Description */}
+
             <p className="text-gray-600">{step.description}</p>
           </div>
         ))}

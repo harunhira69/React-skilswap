@@ -14,21 +14,28 @@ const HeroSlider = () => {
     >
       <SwiperSlide>
         <img
-          className="w-full h-[400px] object-cover"
+          className="w-full h-[500px] object-cover"
+          src="https://i.ibb.co.com/LXgN5qM3/Lucid-Origin-A-young-man-with-a-gentle-smile-and-medium-brown-3.jpg"
+          alt="Web Development"
+        />
+      </SwiperSlide>
+            <SwiperSlide>
+        <img
+          className="w-full h-[500px] object-cover"
           src="https://i.ibb.co.com/bRrJmwJL/Lucid-Origin-Young-developer-with-short-dark-hair-and-brown-sk-1.jpg"
           alt="Web Development"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          className="w-full h-[400px] object-cover"
+          className="w-full h-[500px] object-cover"
           src="https://i.ibb.co.com/FkwndYJb/Lucid-Origin-Traditional-Bangladeshi-dishes-on-a-wooden-table-0.jpg"
           alt="Cooking"
         />
       </SwiperSlide>
       <SwiperSlide>
         <img
-          className="w-full h-[400px] object-cover"
+          className="w-full h-[500px] object-cover"
           src="https://i.ibb.co.com/0RKRn7kb/Lucid-Origin-Photographer-with-a-warm-and-gentle-smile-having-0.jpg"
           alt="Photography"
         />

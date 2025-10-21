@@ -6,7 +6,7 @@ import Footer from '../component/Footer';
 const HomeLayout = () => {
     return (
         <div>
-         <header>
+         <header >
                <Navbar></Navbar>
          </header>
             <main className='min-h-screen w-11/12 mx-auto'>

@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link, useParams } from 'react-router';
+
 
 const SkillsCrad = ({skill}) => {
-    // console.log({skill})
+
+
     return (
-          <div key={skill.skillId} className="card bg-base-100 shadow-xl">
+          <Link to={`/card-details/${skill.skillId}`}  
+          key={skill.skillId} className="card bg-base-100 shadow-xl">
             
             <figure>
               <img
@@ -20,7 +24,7 @@ const SkillsCrad = ({skill}) => {
                 <button className="btn btn-primary">View Details</button>
               </div>
             </div>
-          </div>
+          </Link>
     );
 };
 

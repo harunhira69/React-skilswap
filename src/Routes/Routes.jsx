@@ -1,6 +1,11 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../Layout/HomeLayout";
+
 import Home from "../Pages/Home";
+import SkillsCrad from "../Pages/SkillsCrad";
+import SkilDetails from "../Pages/SkilDetails";
+import Auth from "../Layout/Auth";
+import Login from "../Pages/Login";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +20,24 @@ const router = createBrowserRouter([
            
             
         },
+     {
+        path: '/card-details/:id',
+        element:<SkilDetails></SkilDetails>,
+        loader:()=>fetch('/skill.json')
+     }
 
     ]
   },
+  {
+    path:'/auth',
+    element:<Auth></Auth>,
+    children:[
+      {
+        path:'login',
+        element:<Login></Login>
+
+      }
+    ]
+  }
 ]);
  export default router
