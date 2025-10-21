@@ -2,17 +2,28 @@ import React, { useEffect } from "react";
 import HeroSlider from "../component/HeroSlider";
 import { useLoaderData } from "react-router";
 import Aos from "aos";
+import SkillsCrad from "./SkillsCrad";
+import TopProvider from "./TopProvider";
+import HowItWork from "./HowItWork";
 
 const Home = () => {
   const skills = useLoaderData();
     useEffect(() => {
-    Aos.init({ duration: 1000 }); // animation duration 1000ms
-  }, []); // get array from loader
+    Aos.init({ duration: 1000 }); 
+  }, [skills]); 
 
+
+
+const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
+
+
+  
   return (
     <div>
-      {/* Hero Slider */}
-      <HeroSlider />
+      {/* Hero section */}
+     <section>
+         <HeroSlider />
+     </section>
 
       {/* Welcome Section */}
       <section className="text-center py-10">
@@ -23,24 +34,29 @@ const Home = () => {
       {/* Skill Cards Section */}
       <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
         {skills.map((skill) => (
-          <div key={skill.skillId} className="card bg-base-100 shadow-xl">
-            <figure>
-              <img
-                src={skill.image}
-                alt={skill.skillName}
-                className="h-48 w-full object-cover"
-              />
-            </figure>
-            <div className="card-body">
-              <h2 className="card-title">{skill.skillName}</h2>
-              <p>Price: ${skill.price}</p>
-              <p>Rating: ⭐ {skill.rating}</p>
-              <div className="card-actions justify-end">
-                <button className="btn btn-primary">View Details</button>
-              </div>
-            </div>
-          </div>
+             <SkillsCrad key={skill.skillId} skill={skill}></SkillsCrad>
+            
+        
         ))}
+      </section>
+      <section>
+        {/* extra section */}
+     <div>
+         <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">
+    Top Provider
+  </h3>
+           <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
+          
+            {
+         topProvider.map((top)=>(
+            <TopProvider key={top.skillId} top={top}></TopProvider>
+         ))
+        }
+        </div>
+     </div>
+     {/* how it works */}
+   
+      <HowItWork></HowItWork>
       </section>
     </div>
   );

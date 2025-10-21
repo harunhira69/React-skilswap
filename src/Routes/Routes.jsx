@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import HomeLayout from "../Layout/HomeLayout";
 import Home from "../Pages/Home";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,11 +11,11 @@ const router = createBrowserRouter([
         {
             path:'/home',
             element:<Home></Home>,
-            loader: async () => {
-      const res = await fetch('/skill.json');
-      return res.json(); // now useLoaderData() will be an array
-    }
-        }
+            loader:()=>fetch('/skill.json')
+           
+            
+        },
+
     ]
   },
 ]);
