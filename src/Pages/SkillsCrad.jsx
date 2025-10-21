@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link, useParams } from 'react-router';
+import { Link } from 'react-router';
+import 'animate.css';
 
 
 const SkillsCrad = ({skill}) => {
 
 
     return (
-          <Link to={`/card-details/${skill.skillId}`}  
-          key={skill.skillId} className="card bg-base-100 shadow-xl">
+          <Link to={`/card-details/${skill.skillId} `}  
+          key={skill.skillId} className="card bg-white shadow-lg rounded-2xl overflow-hidden 
+        transform transition-all duration-500 hover:scale-105 hover:shadow-2xl
+        animate__animated animate__fadeInUp animate__faster ">
             
             <figure>
               <img

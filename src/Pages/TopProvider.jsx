@@ -5,8 +5,10 @@ const TopProvider = ({top}) => {
     
     return (
  <div
-  data-aos="fade-up"
-  className="bg-white border border-gray-200 rounded-3xl p-6 text-center shadow-lg hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300"
+
+  className=" bg-white border border-gray-200 rounded-3xl p-6 text-center shadow-lg
+        hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300
+        animate__animated animate__fadeInLeft animate__fast"
 >
   {/* Image */}
   <div className="flex justify-center mb-4">

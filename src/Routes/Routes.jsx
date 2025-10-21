@@ -6,6 +6,7 @@ import SkillsCrad from "../Pages/SkillsCrad";
 import SkilDetails from "../Pages/SkilDetails";
 import Auth from "../Layout/Auth";
 import Login from "../Pages/Login";
+import Signup from "../Pages/Signup";
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
     ]
   },
   {
+    index:true,
+    element:'/'
+  },
+  {
     path:'/auth',
     element:<Auth></Auth>,
     children:[
@@ -36,6 +41,10 @@ const router = createBrowserRouter([
         path:'login',
         element:<Login></Login>
 
+      },
+      {
+        path:'signup',
+        element:<Signup></Signup>
       }
     ]
   }
