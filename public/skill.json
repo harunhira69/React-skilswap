@@ -1,0 +1,74 @@
+[
+  {
+    "skillId": 1,
+    "skillName": "Beginner Guitar Lessons",
+    "providerName": "Alex Martin",
+    "providerEmail": "alex@skillswap.com",
+    "price": 20,
+    "rating": 4.8,
+    "slotsAvailable": 3,
+    "description": "Acoustic guitar classes for complete beginners. Learn chords, rhythm, and your first songs within weeks!",
+    "image": "https://i.ibb.co.com/LXgN5qM3/Lucid-Origin-A-young-man-with-a-gentle-smile-and-medium-brown-3.jpg",
+    "category": "Music"
+  },
+  {
+    "skillId": 2,
+    "skillName": "Spoken English Practice",
+    "providerName": "Sara Hossain",
+    "providerEmail": "sara@skillswap.com",
+    "price": 10,
+    "rating": 4.6,
+    "slotsAvailable": 5,
+    "description": "Conversational English sessions for non-native speakers. Focus on fluency, pronunciation, and confidence.",
+    "image": "https://i.ibb.co.com/VYdRBy31/Lucid-Origin-Two-individuals-with-diverse-facial-features-and-2.jpg",
+    "category": "Language"
+  },
+  {
+    "skillId": 3,
+    "skillName": "Frontend Web Development Basics",
+    "providerName": "Rahim Uddin",
+    "providerEmail": "rahim@skillswap.com",
+    "price": 30,
+    "rating": 4.9,
+    "slotsAvailable": 4,
+    "description": "Learn HTML, CSS, and JavaScript to build your first responsive website. Perfect for beginners stepping into coding.",
+    "image": "https://i.ibb.co.com/bRrJmwJL/Lucid-Origin-Young-developer-with-short-dark-hair-and-brown-sk-1.jpg",
+    "category": "Technology"
+  },
+  {
+    "skillId": 4,
+    "skillName": "Yoga for Stress Relief",
+    "providerName": "Maya Sultana",
+    "providerEmail": "maya@skillswap.com",
+    "price": 15,
+    "rating": 4.7,
+    "slotsAvailable": 6,
+    "description": "Calm your mind and energize your body through guided yoga sessions. No prior experience needed.",
+    "image": "“Photographer taking photos with DSLR camera in natural light, creative composition, outdoor workshop feel, artistic mood.”",
+    "category": "Health & Wellness"
+  },
+  {
+    "skillId": 5,
+    "skillName": "Creative Photography Workshop",
+    "providerName": "David Kim",
+    "providerEmail": "david@skillswap.com",
+    "price": 25,
+    "rating": 4.5,
+    "slotsAvailable": 2,
+    "description": "Explore creative photography techniques using DSLR or mobile cameras. Learn lighting, framing, and editing tricks.",
+    "image": "https://i.ibb.co.com/0RKRn7kb/Lucid-Origin-Photographer-with-a-warm-and-gentle-smile-having-0.jpg",
+    "category": "Art & Creativity"
+  },
+  {
+    "skillId": 6,
+    "skillName": "Home Cooking: Bangladeshi Dishes",
+    "providerName": "Farhana Akter",
+    "providerEmail": "farhana@skillswap.com",
+    "price": 12,
+    "rating": 4.9,
+    "slotsAvailable": 5,
+    "description": "Learn to cook traditional Bangladeshi dishes like biryani, pitha, and bhuna khichuri in an easy, home-friendly way.",
+    "image": "https://i.ibb.co.com/FkwndYJb/Lucid-Origin-Traditional-Bangladeshi-dishes-on-a-wooden-table-0.jpg",
+    "category": "Cooking"
+  }
+]
