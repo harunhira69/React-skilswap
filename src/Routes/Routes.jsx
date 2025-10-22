@@ -7,6 +7,8 @@ import SkilDetails from "../Pages/SkilDetails";
 import Auth from "../Layout/Auth";
 import Login from "../Pages/Login";
 import Signup from "../Pages/Signup";
+import PrivateRoute from "./PrivateRoute";
+import Profile from "../Pages/Profile";
 
 const router = createBrowserRouter([
   {
@@ -31,10 +33,17 @@ const router = createBrowserRouter([
           const data = await res.json();
           return data;
         },
+     
       },
+         {
+              path:'/profile',
+              element:<Profile></Profile>
+        },
       {
         path: "/card-details/:id",
-        element: <SkilDetails />,
+        element: <PrivateRoute>
+          <SkilDetails />
+        </PrivateRoute>,
         loader: async () => {
           const res = await fetch("/skill.json");
           const data = await res.json();

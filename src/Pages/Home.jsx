@@ -6,6 +6,7 @@ import SkillsCrad from "./SkillsCrad";
 import TopProvider from "./TopProvider";
 import HowItWork from "./HowItWork";
 import { AuthContext } from "../Context/AuthContext";
+import SkilSwap from "./SkilSwap";
 
 const Home = () => {
   const {loading,setLoading}=useContext(AuthContext)
@@ -41,9 +42,18 @@ const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
      </section>
 
       {/* Welcome Section */}
-      <section className="text-center py-10">
-        <h2 className="text-3xl font-bold mb-4">Welcome to SkillSwap</h2>
-        <p>Learn new skills, book sessions, and connect with local providers.</p>
+          <section
+        className="text-center py-16 px-6 max-w-3xl mx-auto"
+        data-aos="fade-up"
+      >
+        <h2 className="text-4xl font-bold mb-4 text-gray-800">
+          Welcome to <span className="text-blue-600">SkillSwap</span>
+        </h2>
+        <p className="text-gray-600 text-lg leading-relaxed">
+          Learn new skills, share your knowledge, and connect with talented
+          individuals in your community. Empower growth through collaboration
+          and skill exchange.
+        </p>
       </section>
 
       {/* Skill Cards Section */}
@@ -59,7 +69,7 @@ const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
       <section>
         {/* extra section */}
      <div>
-         <h3 className="text-3xl font-bold text-center mb-8 text-gray-800">
+         <h3 className="text-4xl font-bold text-center mb-8 text-gray-800">
     Top Provider
   </h3>
            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
@@ -74,6 +84,9 @@ const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
      {/* how it works */}
    
       <HowItWork></HowItWork>
+      </section>
+      <section className="mb-10">
+        <SkilSwap></SkilSwap>
       </section>
     </div>
   );

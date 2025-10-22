@@ -7,7 +7,7 @@ const TopProvider = ({top,aosDelay = 0}) => {
  <div
    data-aos="flip-left"
       data-aos-delay={aosDelay}
-  className="  bg-white border border-gray-200 rounded-3xl p-6 text-center shadow-lg
+  className="  bg-linear-to-r from-blue-50 to-purple-50 border-gray-200 rounded-3xl p-6 text-center shadow-lg
         hover:shadow-2xl transition-transform transform
          hover:-translate-y-2 duration-300
         "

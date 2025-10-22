@@ -1,5 +1,5 @@
 import React, { use, useRef } from "react";
-import { Link, Navigate, useNavigate } from "react-router";
+import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import 'animate.css';
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
@@ -7,15 +7,35 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 const Login = () => {
   const navigate = useNavigate()
+  const location = useLocation()
+  const form = location.state || "/";
   const emailRef = useRef()
   const {signIn,setUser,
     resetPassword,
     show,
-    setShow
+    setShow,
+    googleSignUp
   
   
   
   } = use(AuthContext)
+
+
+
+ const handleGoogleSignIn = () => {
+    googleSignUp()
+      .then((res) => {
+        setUser(res.user)
+        navigate(form)
+        toast.success('Google Sign Up Successful')
+         navigate('/')
+      }).catch(e => {
+        console.log(e.message)
+      })
+  }
+
+
+
   const handleLogin = (e)=>{
     e.preventDefault()
     console.log('yes its working')
@@ -25,8 +45,9 @@ const Login = () => {
     signIn(email,password)
     .then((res)=>{
       setUser(res.user)
+      navigate(form)
       toast.success('Login Successful')
-      navigate('/')
+      
     }).catch(e=>{
       toast.error(e.message)
     })
@@ -39,11 +60,16 @@ resetPassword(email).then(()=>{
 }).catch(e=>{
   toast.error(e.message)
 })
+
+ 
   }
   return (
 
 
-    <div className="card bg-base-100 mx-auto w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="card 
+     bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 
+    mx-auto w-full max-w-sm p-4
+     shrink-0 shadow-2xl">
     
       <div className="card-body">
         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -82,13 +108,13 @@ resetPassword(email).then(()=>{
           <button className="btn btn-neutral mt-4">Login</button>
                <button
                   type="button"
-                  
+                  onClick={handleGoogleSignIn}
                   className="flex items-center justify-center gap-3 bg-white text-gray-800 px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
                 >
                   <img
                     src="https://www.svgrepo.com/show/475656/google-color.svg"
                     alt="google"
-                    className="w-5 h-5"
+                    className="w-5 h-5 "
                   />
                   Continue with Google
                 </button>

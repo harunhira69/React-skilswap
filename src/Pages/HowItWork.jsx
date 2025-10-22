@@ -21,7 +21,7 @@ const HowItWork = () => {
           <div
             key={step.id}
             data-aos="fade-up"
-            className="bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300"
+            className="bg-gray-50 rounded-3xl shadow-lg p-8 flex flex-col items-center text-center hover:scale-105 transition-transform duration-300"
           >
           
             <div className="text-6xl mb-4">{step.icon}</div>

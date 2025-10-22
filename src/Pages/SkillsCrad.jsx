@@ -12,7 +12,9 @@ const SkillsCrad = ({skill,aosDelay}) => {
             data-aos="fade-up"
             data-aos-delay={aosDelay}
             data-aos-duration="800"
-          className="card bg-white shadow-lg rounded-2xl overflow-hidden 
+          className="card
+          bg-white
+           shadow-lg rounded-2xl overflow-hidden 
         transform transition-all duration-500 hover:scale-105 hover:shadow-2xl
         ">
             

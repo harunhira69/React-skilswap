@@ -1,108 +1,104 @@
-import React, { use } from 'react';
-import {  Link, NavLink } from 'react-router';
-import logo from '../assets/logo.png'
-import { AuthContext } from '../Context/AuthContext';
-import { toast } from 'react-toastify';
+import React, { useContext } from "react";
+import { NavLink } from "react-router";
+import logo from "../assets/logom.jpg";
+import { AuthContext } from "../Context/AuthContext";
+import { toast } from "react-toastify";
+import { FaBars } from "react-icons/fa";
+import NavButton from "./Button";
 
 const Navbar = () => {
-  const {user,Logout,setUser} = use(AuthContext)
-  console.log(user)
-   const handleLogout = () => {
+  const { user, Logout, setUser } = useContext(AuthContext);
+
+  const handleLogout = () => {
     Logout()
       .then(() => {
         toast.success("Logout successful");
-        setUser(null)
+        setUser(null);
       })
       .catch((e) => console.log(e.message));
   };
- 
-    return (
-      <div className="navbar bg-base-100 shadow-sm">
- <div className="navbar-start">
-  <div className="dropdown">
-    <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-      <svg xmlns="http://www.w3.org/2000/svg" 
-        className="h-5 w-5"
-        fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
-          d="M4 6h16M4 12h8m-8 6h16" />
-      </svg>
-    </div>
 
-    
-    <ul
-      tabIndex={0}
-      className="menu menu-sm dropdown-content bg-base-100 rounded-box mt-3 w-52 p-2 shadow"
-    >
-       <li><NavLink
-         className={({ isActive }) =>
-         (isActive ? "active" : "")}
-        to="/home">Home</NavLink></li>
-       
-       
-      </ul>
-    </div>
-   <div>
-    <img className='w-[40px] h-[40px] rounded-full' src={logo} alt="" />
-   </div>
-  </div>
-  <div className="navbar-center hidden lg:flex">
-    <ul className="menu menu-horizontal px-1">
-     <li><NavLink
-         className={({ isActive }) =>
-         (isActive ? "active" : "")}
-        to="/home">Home</NavLink></li>
-      
-    </ul>
-  </div>
-  <div className="navbar-end">
-  {user ? (
+  const linkClass = ({ isActive }) =>
+    `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+      isActive ? "bg-indigo-600 text-white" : "hover:bg-indigo-50 hover:text-indigo-700"
+    }`;
+
+  return (
+    <div className="navbar bg-white/90 backdrop-blur-md shadow-md px-4 sm:px-6 lg:px-12">
+      {/* Navbar Start */}
+      <div className="navbar-start flex items-center gap-3">
+        {/* Mobile dropdown */}
+        <div className="dropdown">
+          <label tabIndex={0} className="btn btn-ghost lg:hidden p-2">
+            <FaBars className="h-5 w-5 text-gray-700" />
+          </label>
+          <ul
+            tabIndex={0}
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow-lg bg-white rounded-xl w-52 animate-fade-in flex flex-col gap-2"
+          >
+            <li>
+              <NavLink to="/home" className={linkClass}>
+                Home
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/profile" className={linkClass}>
+                Profile
+              </NavLink>
+            </li>
+            {/* Include login/signup for mobile if user not logged in */}
+           
+          </ul>
+        </div>
+        {/* Logo */}
+        <img src={logo} alt="SkillSwap Logo" className="w-10 h-10 rounded-full shadow-sm" />
+      </div>
+
+      {/* Navbar Center */}
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal px-1 gap-3">
+          <li>
+            <NavLink to="/home" className={linkClass}>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/profile" className={linkClass}>
+              Profile
+            </NavLink>
+          </li>
+        </ul>
+      </div>
+
+      {/* Navbar End */}
+      <div className="navbar-end flex items-center gap-3">
+        {user ? (
           <>
-            {/* Show Avatar */}
-            <img
-              src={
-                user.photoURL
-              }
-              alt="User Avatar"
-              className="w-10 h-10 rounded-full object-cover border border-gray-300 cursor-pointer"
-              title={user.displayName || "User"}
-            />
-            {/* Logout Button */}
-            <button onClick={handleLogout} className="btn btn-primary px-4">
+            <div className="tooltip tooltip-bottom" data-tip={user.displayName || "User"}>
+              <img
+                src={user.photoURL}
+                alt="User Avatar"
+                className="w-10 h-10 rounded-full object-cover border border-gray-300 cursor-pointer hover:ring-2 hover:ring-indigo-500 transition-all"
+              />
+            </div>
+            <button
+              onClick={handleLogout}
+              className="btn bg-indigo-600 text-white hover:bg-indigo-700 transition-all px-4 py-2 rounded-lg text-sm whitespace-nowrap"
+            >
               Logout
             </button>
           </>
         ) : (
-    <div className="flex gap-3">
-      <NavLink
-        to="/auth/login"
-        className={({ isActive }) =>
-          `btn px-4 ${
-            isActive ? "btn-primary" : "btn-outline btn-primary"
-          }`
-        }
-      >
-        Login
-      </NavLink>
-
-      <NavLink
-        to="/auth/signup"
-        className={({ isActive }) =>
-          `btn px-4 ${
-            isActive ? "btn-primary" : "btn-outline btn-primary"
-          }`
-        }
-      >
-        Sign Up
-      </NavLink>
-    </div>
-
+         
+      <div className=" flex lg:gap-3 gap-2">
+  <NavButton to="/auth/login">Login</NavButton>
+  <NavButton to="/auth/signup">Sign Up</NavButton>
+</div>
+          
         )}
-  
-  </div>
-  </div>
-
- 
-)};
+      </div>
+    </div>
+  );
+};
 
 export default Navbar;
