@@ -1,48 +1,107 @@
-import React from 'react';
+import React, { use } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link } from 'react-router';
+import { Link, Navigate, useNavigate } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
+import { toast } from 'react-toastify';
+
 
 const Signup = () => {
-    return (
-            <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+  const navigate = useNavigate()
+  const { googleSignUp,
+    user,
+    setUser,
+    createUser
+  } = use(AuthContext)
+  const handleGoogle = () => {
+    googleSignUp()
+      .then((res) => {
+        setUser(res.user)
+        toast.success('Google Sign Up Successful')
+         navigate('/')
+      }).catch(e => {
+        console.log(e.message)
+      })
+  }
+  const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
+  const handleSignUp = e => {
+    e.preventDefault()
+    const name = e.target.name.value;
+    const photo = e.target.photo.value;
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log({ name, photo, email, password })
+    if (!passwordRegex.test(password)) {
+      toast.error('Password must contain at least one uppercase, one lowercase, one special character, and be at least 6 characters long.')
+      return
+    }
+createUser(email, password)
+  .then((res) => {
+    setUser(res.user);
+    toast.success('Sign up successfully');
+    navigate('/');
+  })
+  .catch((e) => {
+    toast.error(e.message);
+  });
+
+  }
+  return (
+    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
       <div className="card-body">
         <h1 className="text-5xl font-bold">Register now!</h1>
-        <fieldset className="fieldset">
+        <form onSubmit={handleSignUp}>
+          <fieldset className="fieldset">
             {/* name */}
-        <label className="label">Name</label>
-          <input
-           type="text" 
-           className="input" 
-           placeholder="Your name" />
-           {/* photo url */}
-            <label className="label">Email</label>
-          <input
-           type="text" 
-           name='photo'
-           className="input" 
-           placeholder="Email" />
+            <label className="label">Name</label>
+            <input
+              type="text"
+              className="input"
+              name='name'
+              placeholder="Your name" />
+            {/* photo url */}
+            <label className="label">PhotoUrl</label>
+            <input
+              type="text"
+              name='photo'
+              className="input"
+              placeholder="Photo url" />
             {/* email */}
-          <label className="label">Email</label>
-          <input
-           type="email" 
-           name='email'
-           className="input" 
-           placeholder="Email" />
-           {/* password */}
-          <label className="label">Password</label>
-          <input 
-          type="password" 
-          name='password'
-          className="input" 
-          placeholder="Password" />
-          <div><a className="link link-hover">Forgot password?</a></div>
-          <button className="btn btn-neutral mt-4">Register</button>
-       
-          <p>Already have account?<Link to='/auth/login'>Login</Link></p>
-        </fieldset>
+            <label className="label">Email</label>
+            <input
+              type="email"
+              name='email'
+              required
+              className="input"
+              placeholder="Email" />
+            {/* password */}
+            <label className="label">Password</label>
+            <input
+              type="password"
+              name='password'
+              className="input"
+              placeholder="Password" />
+            <div><a className="link link-hover">Forgot password?</a></div>
+            <button className="btn btn-neutral mt-4">Register</button>
+            <button
+              onClick={handleGoogle}
+              type="button"
+
+              className="flex items-center justify-center gap-3 bg-white text-gray-800 px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
+            >
+              <img
+                src="https://www.svgrepo.com/show/475656/google-color.svg"
+                alt="google"
+                className="w-5 h-5"
+              />
+              Continue with Google
+            </button>
+
+            <p>Already have account?<Link className='hover:underline text-blue-500' to='/auth/login'>Login</Link></p>
+          </fieldset>
+        </form>
       </div>
     </div>
-    );
+  );
 };
 
 export default Signup;

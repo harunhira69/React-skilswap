@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router";
 import HomeLayout from "../Layout/HomeLayout";
 
 import Home from "../Pages/Home";
-import SkillsCrad from "../Pages/SkillsCrad";
+
 import SkilDetails from "../Pages/SkilDetails";
 import Auth from "../Layout/Auth";
 import Login from "../Pages/Login";
@@ -14,25 +14,36 @@ const router = createBrowserRouter([
     element: <HomeLayout></HomeLayout>,
     errorElement:<h3>404 Not Found</h3>,
     children:[
-        {
-            path:'/home',
-            element:<Home></Home>,
-            loader:()=>fetch('/skill.json')
-           
-            
+      {
+        index: true, // default route
+        element: <Home />,
+        loader: async () => {
+          const res = await fetch("/skill.json");
+          const data = await res.json();
+          return data;
         },
-     {
-        path: '/card-details/:id',
-        element:<SkilDetails></SkilDetails>,
-        loader:()=>fetch('/skill.json')
-     }
+      },
+      {
+        path: "/home",
+        element: <Home />,
+        loader: async () => {
+          const res = await fetch("/skill.json");
+          const data = await res.json();
+          return data;
+        },
+      },
+      {
+        path: "/card-details/:id",
+        element: <SkilDetails />,
+        loader: async () => {
+          const res = await fetch("/skill.json");
+          const data = await res.json();
+          return data;
+        },
+      },
+    ],
+  },
 
-    ]
-  },
-  {
-    index:true,
-    element:'/'
-  },
   {
     path:'/auth',
     element:<Auth></Auth>,
