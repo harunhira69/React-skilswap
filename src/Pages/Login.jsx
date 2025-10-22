@@ -1,8 +1,37 @@
-import React from "react";
-import { Link, Navigate } from "react-router";
+import React, { use, useRef } from "react";
+import { Link, Navigate, useNavigate } from "react-router";
 import 'animate.css';
+import { AuthContext } from "../Context/AuthContext";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const navigate = useNavigate()
+  const emailRef = useRef()
+  const {signIn,setUser,resetPassword} = use(AuthContext)
+  const handleLogin = (e)=>{
+    e.preventDefault()
+    console.log('yes its working')
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+    console.log(email,password)
+    signIn(email,password)
+    .then((res)=>{
+      setUser(res.user)
+      toast.success('Login Successful')
+      navigate('/')
+    }).catch(e=>{
+      toast.error(e.message)
+    })
+  }
+
+  const handleForgetPassword = ()=>{
+     const email = emailRef.current.value;
+resetPassword(email).then(()=>{
+  toast.success('Please check your email')
+}).catch(e=>{
+  toast.error(e.message)
+})
+  }
   return (
 
 
@@ -10,12 +39,24 @@ const Login = () => {
     
       <div className="card-body">
         <h1 className="text-5xl font-bold">Login now!</h1>
-        <fieldset className="fieldset">
+    <form onSubmit={handleLogin}>
+          <fieldset className="fieldset">
           <label className="label">Email</label>
-          <input type="email" className="input" placeholder="Email" />
+          <input type="email" 
+          name="email"
+          ref={emailRef}
+          className="input" 
+          placeholder="Email" />
           <label className="label">Password</label>
-          <input type="password" className="input" placeholder="Password" />
-          <div><a className="link link-hover">Forgot password?</a></div>
+          <input type="password"
+          className="input"
+          name="password" 
+          placeholder="Password" />
+          <div><button 
+          type="button" 
+          onClick={handleForgetPassword}
+          className="link link-hover">
+            Forgot password?</button></div>
           <button className="btn btn-neutral mt-4">Login</button>
                <button
                   type="button"
@@ -35,6 +76,7 @@ const Login = () => {
 </p>
 
         </fieldset>
+    </form>
       </div>
     </div>
 
