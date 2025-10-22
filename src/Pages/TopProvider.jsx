@@ -1,14 +1,16 @@
 import React from 'react';
 
-const TopProvider = ({top}) => {
+const TopProvider = ({top,aosDelay = 0}) => {
     const {providerName,image,description,rating} = top;
     
     return (
  <div
-
-  className=" bg-white border border-gray-200 rounded-3xl p-6 text-center shadow-lg
-        hover:shadow-2xl transition-transform transform hover:-translate-y-2 duration-300
-        animate__animated animate__fadeInLeft animate__fast"
+   data-aos="flip-left"
+      data-aos-delay={aosDelay}
+  className="  bg-white border border-gray-200 rounded-3xl p-6 text-center shadow-lg
+        hover:shadow-2xl transition-transform transform
+         hover:-translate-y-2 duration-300
+        "
 >
   {/* Image */}
   <div className="flex justify-center mb-4">

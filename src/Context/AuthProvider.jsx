@@ -12,9 +12,10 @@ import { auth } from '../Firebase/firebase.config';
 
 
 const AuthProvider = ({ children }) => {
+  const [show,setShow] = useState(false)
 
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(null)
+  const [loading, setLoading] = useState(true)
 
 
 
@@ -22,12 +23,20 @@ const AuthProvider = ({ children }) => {
   // sign up google
 
   const googleSignUp = () => {
+      setLoading(true);
     return signInWithPopup(auth, provider)
+          .finally(() => setLoading(false));
+
+
   }
   // email user create
 
   const createUser = (email, password) => {
+      setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
+          .finally(() => setLoading(false));
+
+
   }
   // onauth
   useEffect(() => {
@@ -42,23 +51,34 @@ const AuthProvider = ({ children }) => {
 
   // logout
   const Logout = () => {
+      setLoading(true);
     return signOut(auth)
+          .finally(() => setLoading(false));
+   
+   
 
   }
   // update profile
 
     const updateProfiles = (user, profileData) => {
+     
   return updateProfile(user, profileData);
+        
+  
 }
 // sign in
 
 const signIn = (email,password)=>{
+    setLoading(true);
   return signInWithEmailAndPassword(auth, email, password)
+        .finally(() => setLoading(false));
 }
 
 // Reset Password
 const resetPassword = (email)=>{
+    setLoading(true);
   return sendPasswordResetEmail(auth, email)
+        .finally(() => setLoading(false));
 }
  
    
@@ -76,14 +96,19 @@ const resetPassword = (email)=>{
     updateProfiles,
     signIn,
     resetPassword,
+    show,
+    setShow,
     
 
 
   }
 
-  return <AuthContext value={authInfo}>
+ return (
+  <AuthContext.Provider value={authInfo}>
     {children}
-  </AuthContext>
+  </AuthContext.Provider>
+);
+
 };
 
 export default AuthProvider;

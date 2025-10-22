@@ -1,20 +1,35 @@
-import React, { useEffect } from "react";
+import React, { use, useContext, useEffect } from "react";
 import HeroSlider from "../component/HeroSlider";
 import { useLoaderData } from "react-router";
 import Aos from "aos";
 import SkillsCrad from "./SkillsCrad";
 import TopProvider from "./TopProvider";
 import HowItWork from "./HowItWork";
+import { AuthContext } from "../Context/AuthContext";
 
 const Home = () => {
+  const {loading,setLoading}=useContext(AuthContext)
+
   const skills = useLoaderData();
-    useEffect(() => {
-    Aos.init({ duration: 1000 }); 
-  }, [skills]); 
+ useEffect(() => {
+  Aos.init({ duration: 1000, once: false });
+}, []);
+
+useEffect(() => {
+  Aos.refresh();
+}, [skills]);
 
 
 
 const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-500"></div>
+      </div>
+    );
+  }
 
 
   
@@ -33,8 +48,10 @@ const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
 
       {/* Skill Cards Section */}
       <section className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
-        {skills.map((skill) => (
-             <SkillsCrad key={skill.skillId} skill={skill}></SkillsCrad>
+        {skills.map((skill,index) => (
+             <SkillsCrad key={skill.skillId}
+             
+              skill={skill}  aosDelay={index * 100}></SkillsCrad>
             
         
         ))}
@@ -48,8 +65,8 @@ const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 px-4">
           
             {
-         topProvider.map((top)=>(
-            <TopProvider key={top.skillId} top={top}></TopProvider>
+         topProvider.map((top,index)=>(
+            <TopProvider key={top.skillId} top={top} aosDelay={index * 150}></TopProvider>
          ))
         }
         </div>

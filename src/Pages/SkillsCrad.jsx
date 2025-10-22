@@ -3,14 +3,18 @@ import { Link } from 'react-router';
 import 'animate.css';
 
 
-const SkillsCrad = ({skill}) => {
+const SkillsCrad = ({skill,aosDelay}) => {
 
 
     return (
           <Link to={`/card-details/${skill.skillId} `}  
-          key={skill.skillId} className="card bg-white shadow-lg rounded-2xl overflow-hidden 
+          key={skill.skillId} 
+            data-aos="fade-up"
+            data-aos-delay={aosDelay}
+            data-aos-duration="800"
+          className="card bg-white shadow-lg rounded-2xl overflow-hidden 
         transform transition-all duration-500 hover:scale-105 hover:shadow-2xl
-        animate__animated animate__fadeInUp animate__faster ">
+        ">
             
             <figure>
               <img
