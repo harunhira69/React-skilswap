@@ -10,6 +10,7 @@ const Signup = () => {
   const { googleSignUp,
     user,
     setUser,
+    updateProfiles,
     createUser
   } = use(AuthContext)
   const handleGoogle = () => {
@@ -36,6 +37,10 @@ const Signup = () => {
     }
 createUser(email, password)
   .then((res) => {
+      updateProfiles(res.user, {
+      displayName: name,
+      photoURL: photo
+    })
     setUser(res.user);
     toast.success('Sign up successfully');
     navigate('/');
