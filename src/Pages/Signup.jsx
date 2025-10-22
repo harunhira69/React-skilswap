@@ -105,7 +105,7 @@ createUser(email, password)
                {show? <FaEye />:<FaEyeSlash />}
               </span>
               </div>
-            <div><a className="link link-hover">Forgot password?</a></div>
+           
             <button className="btn btn-neutral mt-4">Register</button>
             <button
               onClick={handleGoogle}

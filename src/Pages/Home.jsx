@@ -7,6 +7,7 @@ import TopProvider from "./TopProvider";
 import HowItWork from "./HowItWork";
 import { AuthContext } from "../Context/AuthContext";
 import SkilSwap from "./SkilSwap";
+import GlobalLoader from "./GlobalLoader";
 
 const Home = () => {
   const {loading,setLoading}=useContext(AuthContext)
@@ -25,11 +26,7 @@ useEffect(() => {
 const topProvider = [...skills].sort((a,b)=>b.rating-a.rating).slice(0,3)
 
   if (loading) {
-    return (
-      <div className="flex justify-center items-center h-screen">
-        <div className="animate-spin rounded-full h-16 w-16 border-b-4 border-blue-500"></div>
-      </div>
-    );
+    return <GlobalLoader></GlobalLoader>
   }
 
 

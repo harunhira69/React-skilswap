@@ -79,7 +79,7 @@ const email = e.target.email.value;
             placeholder="Enter your email" 
             className="input input-bordered w-full" />
           </div>
-          <button type="submit" className="btn bg-gradient-to-r from-indigo-500 to-pink-500 text-white w-full border-none hover:scale-105 transition-all">
+          <button type="submit" className="btn bg-linear-to-r from-indigo-500 to-pink-500 text-white w-full border-none hover:scale-105 transition-all">
             Submit Booking
           </button>
         </form>

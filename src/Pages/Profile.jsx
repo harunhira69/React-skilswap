@@ -1,15 +1,17 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
+import GlobalLoader from "./GlobalLoader";
 
 const Profile = () => {
-    const {user} = useContext(AuthContext)
+    const {user,loading} = useContext(AuthContext)
     const updateProfile = ()=>{
         if (!user) {  toast.error("No user found! Please login to update profile.");
       return;}
     
         toast.success('Profile update feature coming soon!')
     }
+    if(loading) return <GlobalLoader></GlobalLoader>
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-gray-50 to-gray-100 px-4 py-10">
       <div className="bg-white shadow-2xl rounded-3xl w-full max-w-md p-8 text-center border border-gray-100 transition-all duration-300 hover:shadow-blue-200">

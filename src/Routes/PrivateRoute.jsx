@@ -1,15 +1,16 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../Context/AuthContext';
 import { Navigate, useLocation } from 'react-router';
+import GlobalLoader from '../Pages/GlobalLoader';
 
 const PrivateRoute = ({children}) => {
     const {user,loading} = useContext(AuthContext)
     const location = useLocation()
     console.log(location)
-    if(loading)return <p>Loading......</p>
+    if(loading)return <GlobalLoader></GlobalLoader>
 
     if(!user){
-    return  <Navigate  to='/auth/login'>
+    return  <Navigate state={location.pathname} to='/auth/login'>
 
       </Navigate>
     }

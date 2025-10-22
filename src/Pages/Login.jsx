@@ -8,10 +8,11 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
+  console.log(location)
   const form = location.state || "/";
   const emailRef = useRef()
   const {signIn,setUser,
-    resetPassword,
+   loginEmail, setLoginEmail,
     show,
     setShow,
     googleSignUp
@@ -22,13 +23,14 @@ const Login = () => {
 
 
 
+
  const handleGoogleSignIn = () => {
     googleSignUp()
       .then((res) => {
         setUser(res.user)
         navigate(form)
         toast.success('Google Sign Up Successful')
-         navigate('/')
+          navigate(form)
       }).catch(e => {
         console.log(e.message)
       })
@@ -53,16 +55,12 @@ const Login = () => {
     })
   }
 
-  const handleForgetPassword = ()=>{
-     const email = emailRef.current.value;
-resetPassword(email).then(()=>{
-  toast.success('Please check your email')
-}).catch(e=>{
-  toast.error(e.message)
-})
+const handleForgetPassword = () => {
+  const email = emailRef.current.value;
+  if (email) setLoginEmail(email); // store globally
+  navigate('/auth/forget-password');
+};
 
- 
-  }
   return (
 
 

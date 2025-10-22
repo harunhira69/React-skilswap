@@ -1,27 +1,27 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router";
+import { NavLink, useNavigate } from "react-router";
 import logo from "../assets/logom.jpg";
 import { AuthContext } from "../Context/AuthContext";
 import { toast } from "react-toastify";
 import { FaBars } from "react-icons/fa";
 import NavButton from "./Button";
+import GlobalLoader from "../Pages/GlobalLoader";
 
 const Navbar = () => {
-  const { user, Logout, setUser } = useContext(AuthContext);
-
-  const handleLogout = () => {
-    Logout()
-      .then(() => {
-        toast.success("Logout successful");
-        setUser(null);
-      })
-      .catch((e) => console.log(e.message));
-  };
+  const { user, Logout, setUser,loading } = useContext(AuthContext);
+  const navigate = useNavigate()
+ const handleLogout = ()=>{
+  Logout()
+  setUser(null)
+  toast.success('Logout Successful')
+  navigate('/home')
+ }
 
   const linkClass = ({ isActive }) =>
     `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
       isActive ? "bg-indigo-600 text-white" : "hover:bg-indigo-50 hover:text-indigo-700"
     }`;
+    if(loading) return <GlobalLoader></GlobalLoader>
 
   return (
     <div className="navbar bg-white/90 backdrop-blur-md shadow-md px-4 sm:px-6 lg:px-12">
@@ -72,6 +72,7 @@ const Navbar = () => {
 
       {/* Navbar End */}
       <div className="navbar-end flex items-center gap-3">
+       
         {user ? (
           <>
             <div className="tooltip tooltip-bottom" data-tip={user.displayName || "User"}>
