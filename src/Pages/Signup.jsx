@@ -1,12 +1,16 @@
 import React, { use, useContext, useState } from 'react';
 import { FcGoogle } from 'react-icons/fc';
-import { Link, Navigate, useNavigate } from 'react-router';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 import { toast } from 'react-toastify';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
 
 
 const Signup = () => {
+  const location = useLocation()
+    console.log(location)
+    const form = location.state || "/";
+
   
   const navigate = useNavigate()
   const { googleSignUp,
@@ -47,7 +51,7 @@ createUser(email, password)
     }).then(()=>{
          setUser(res.user);
     toast.success('Sign up successfully');
-    navigate('/home');
+    navigate(form);
     })
  
   })
