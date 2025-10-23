@@ -6,7 +6,7 @@ const SkilSwap = () => {
       className="bg-linear-to-r from-indigo-50 via-blue-50 to-cyan-50 py-24 px-6 relative overflow-hidden"
       data-aos="fade-up"
     >
-      {/* Background decorative shapes */}
+     
       <div className="absolute top-0 left-0 w-72 h-72 bg-indigo-200 rounded-full mix-blend-multiply opacity-30 -translate-x-1/2 -translate-y-1/2"></div>
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-200 rounded-full mix-blend-multiply opacity-30 translate-x-1/2 translate-y-1/2"></div>
 

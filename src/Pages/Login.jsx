@@ -24,17 +24,17 @@ const Login = () => {
 
 
 
-//  const handleGoogleSignIn = () => {
-//     googleSignUp()
-//       .then((res) => {
-//         setUser(res.user)
-//         navigate(form)
-//         toast.success('Google Sign Up Successful')
-//           navigate(form)
-//       }).catch(e => {
-//         console.log(e.message)
-//       })
-//   }
+ const handleGoogleSignIn = () => {
+    googleSignUp()
+      .then((res) => {
+        setUser(res.user)
+        navigate(form)
+        toast.success('Google Sign Up Successful')
+          navigate(form)
+      }).catch(e => {
+        console.log(e.message)
+      })
+  }
 
 
 
@@ -107,8 +107,10 @@ const handleForgetPassword = () => {
           onClick={handleForgetPassword}
           className="link link-hover">
             Forgot password?</button></div>
-          <button className="btn btn-neutral mt-4">Login</button>
-               {/* <button
+          <button
+          type="submit"
+           className="btn btn-neutral mt-4">Login</button>
+               <button
                   type="button"
                   onClick={handleGoogleSignIn}
                   className="flex items-center justify-center gap-3 bg-white text-gray-800 px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
@@ -119,7 +121,7 @@ const handleForgetPassword = () => {
                     className="w-5 h-5 "
                   />
                   Continue with Google
-                </button> */}
+                </button>
           <p>
      Don't have an account? 
   <Link to="/auth/signup" className="text-blue-600 hover:underline">Sign Up</Link>

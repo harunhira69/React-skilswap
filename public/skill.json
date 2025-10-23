@@ -7,10 +7,9 @@
     "price": 20,
     "rating": 4.8,
     "slotsAvailable": 3,
-    "description": "Acoustic guitar classes for complete beginners. Learn chords, rhythm, and your first songs within weeks!",
+    "description": "Alex helps beginners discover the joy of music through hands-on guitar sessions. His friendly guidance makes learning chords, rhythm, and melody simple and enjoyable, even for complete newcomers.",
     "image": "https://i.ibb.co.com/LXgN5qM3/Lucid-Origin-A-young-man-with-a-gentle-smile-and-medium-brown-3.jpg",
     "category": "Music"
-    
   },
   {
     "skillId": 2,
@@ -20,7 +19,7 @@
     "price": 10,
     "rating": 4.6,
     "slotsAvailable": 5,
-    "description": "Conversational English sessions for non-native speakers. Focus on fluency, pronunciation, and confidence.",
+    "description": "Sara creates a warm and supportive space for learners to improve their spoken English. Her sessions focus on fluency, pronunciation, and confidence to help you express yourself naturally in any setting.",
     "image": "https://i.ibb.co.com/VYdRBy31/Lucid-Origin-Two-individuals-with-diverse-facial-features-and-2.jpg",
     "category": "Language"
   },
@@ -32,7 +31,7 @@
     "price": 30,
     "rating": 4.9,
     "slotsAvailable": 4,
-    "description": "Learn HTML, CSS, and JavaScript to build your first responsive website. Perfect for beginners stepping into coding.",
+    "description": "Rahim introduces you to the fundamentals of web development with clarity and enthusiasm. Learn to build your first responsive website using HTML, CSS, and JavaScript — guided by a passionate developer.",
     "image": "https://i.ibb.co.com/bRrJmwJL/Lucid-Origin-Young-developer-with-short-dark-hair-and-brown-sk-1.jpg",
     "category": "Technology"
   },
@@ -44,7 +43,7 @@
     "price": 15,
     "rating": 4.7,
     "slotsAvailable": 6,
-    "description": "Calm your mind and energize your body through guided yoga sessions. No prior experience needed.",
+    "description": "With Maya’s calm and compassionate approach, you’ll discover how yoga can bring peace and balance to your daily life. Each session combines gentle movement and mindfulness for complete relaxation.",
     "image": "https://i.ibb.co.com/Wp2c3xPH/Lucid-Origin-Woman-with-serene-facial-features-and-medium-brow-2.jpg",
     "category": "Health & Wellness"
   },
@@ -56,7 +55,7 @@
     "price": 25,
     "rating": 4.5,
     "slotsAvailable": 2,
-    "description": "Explore creative photography techniques using DSLR or mobile cameras. Learn lighting, framing, and editing tricks.",
+    "description": "David guides you through the art of photography with a creative eye. Learn to capture meaningful moments through expert instruction on lighting, composition, and storytelling through images.",
     "image": "https://i.ibb.co.com/0RKRn7kb/Lucid-Origin-Photographer-with-a-warm-and-gentle-smile-having-0.jpg",
     "category": "Art & Creativity"
   },
@@ -68,7 +67,7 @@
     "price": 12,
     "rating": 4.9,
     "slotsAvailable": 5,
-    "description": "Learn to cook traditional Bangladeshi dishes like biryani, pitha, and bhuna khichuri in an easy, home-friendly way.",
+    "description": "Farhana brings the rich flavors of Bangladesh straight to your kitchen. Learn to cook traditional dishes like biryani, pitha, and bhuna khichuri with her patient instruction and cultural passion.",
     "image": "https://i.ibb.co.com/FkwndYJb/Lucid-Origin-Traditional-Bangladeshi-dishes-on-a-wooden-table-0.jpg",
     "category": "Cooking"
   }

@@ -16,12 +16,16 @@ const Profile = () => {
       const [gender,setGender]=useState(user?.gender||'');
 
       const[updating,setUpdating] = useState(false)
-       useEffect(() => {
-    if (!user) toast.info("No user found! Showing guest profile.");
-  }, [user]);
+useEffect(() => {
+  if (!user) toast.info("No user found! Showing guest profile.");
+}, [user]);
 
       const handleUpdateProfile = async e=>{
         e.preventDefault()
+          if (!user) {
+    toast.error("You must be logged in to update your profile!");
+    return; 
+  }
           if (!name.trim()) {
     toast.error("Full name is required!");
     return;

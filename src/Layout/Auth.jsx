@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../component/Navbar';
 import { Outlet } from 'react-router';
+import Footer from '../component/Footer';
 
 const Auth = () => {
   return (
@@ -14,6 +15,7 @@ const Auth = () => {
       <main className="w-full md:w-11/12 mx-auto flex-grow:1 py-4 px-4">
         <Outlet />
       </main>
+      <Footer></Footer>
     </div>
   );
 };

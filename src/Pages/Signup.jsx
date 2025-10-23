@@ -17,16 +17,16 @@ const Signup = () => {
     show,
     setShow
   } = useContext(AuthContext)
-  const handleGoogle = () => {
-    googleSignUp()
-      .then((res) => {
-        setUser(res.user)
-        toast.success('Google Sign Up Successful')
-         navigate('/')
-      }).catch(e => {
-        console.log(e.message)
-      })
-  }
+  // const handleGoogle = () => {
+  //   googleSignUp()
+  //     .then((res) => {
+  //       setUser(res.user)
+  //       toast.success('Google Sign Up Successful')
+  //        navigate('/')
+  //     }).catch(e => {
+  //       console.log(e.message)
+  //     })
+  // }
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
   const handleSignUp = e => {
     e.preventDefault()
@@ -113,7 +113,7 @@ createUser(email, password)
               </div>
            
             <button className="btn btn-neutral mt-4">Register</button>
-            <button
+            {/* <button
               onClick={handleGoogle}
               type="button"
 
@@ -125,7 +125,7 @@ createUser(email, password)
                 className="w-5 h-5"
               />
               Continue with Google
-            </button>
+            </button> */}
 
             <p>Already have account?<Link className='hover:underline text-blue-500' to='/auth/login'>Login</Link></p>
           </fieldset>

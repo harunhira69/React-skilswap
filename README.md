@@ -1,16 +1,79 @@
-# React + Vite
+# 🎓 SkillSwap
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**🌐 Live Project:** [https://react-skilswap.web.app](https://react-skilswap.web.app)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🪄 Overview
 
-## React Compiler
+**SkillSwap** is an interactive learning and teaching platform built using **React** and **Firebase**.  
+It connects learners with skill providers — allowing users to **browse**, **book**, and **learn** through an engaging, responsive, and secure web experience.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+The platform supports user authentication, personalized dashboards, protected routes, and stunning animations — making learning both simple and enjoyable.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Purpose
+
+The main purpose of **SkillSwap** is to empower people to share and gain skills within their community by offering a user-friendly platform to:
+- **Learn** something new from local or global mentors.  
+- **Teach** and share one’s own expertise.  
+- **Collaborate** and grow together.
+
+---
+
+## 💡 Key Features
+
+### 🔐 Authentication & User Management
+- **Email/Password Registration & Login**
+- **Google Sign-In Integration**
+- **Update Profile (Name & Photo)**
+- **Password Reset via Email**
+- **Logout Functionality**
+
+### 🛡️ Private & Protected Routes
+- Only authenticated users can access certain pages.  
+- Redirects unauthorized users to the login page.
+
+### 🧭 Skill & Provider Features
+- Dynamic skill cards loaded from JSON data.
+- Each skill includes an image, provider details, price, rating, and description.
+- Filtered display of **Top 3 Providers** by rating.
+
+### 🧩 UI & UX Enhancements
+- **Hero Slider:** Built with **Swiper.js** for a smooth and interactive banner.
+- **How It Works Section:** Simple step-by-step guide with icons.
+- **Responsive Design:** Powered by **TailwindCSS** for all screen sizes.
+- **Animations:** Integrated **AOS (Animate On Scroll)** for smooth visual transitions.
+- **Toast Alerts:** Real-time notifications using **React Toastify**.
+- **Icons:** Clean and meaningful visuals via **React Icons**.
+- **Global Loader:** Displays loading animation while fetching or verifying data.
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology | Purpose |
+|-------------|----------|
+| **React.js** | Component-based frontend framework |
+| **Firebase Authentication** | Secure login, sign-up, and profile management |
+| **React Router** | Client-side routing & protected routes |
+| **Context API** | Global state management for authentication |
+| **TailwindCSS** | Styling & responsive design |
+| **AOS (Animate On Scroll)** | Smooth scroll-based animations |
+| **Swiper.js** | Interactive hero slider |
+| **React Toastify** | Toast notifications |
+| **React Icons** | Icon components for UI enhancement |
+
+---
+
+## 📦 NPM Packages Used
+
+```bash
+npm install react-router-dom
+npm install firebase
+npm install aos
+npm install react-icons
+npm install swiper
+npm install react-toastify
+npm install tailwindcss
