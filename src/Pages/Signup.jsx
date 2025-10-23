@@ -1,4 +1,4 @@
-import React, { use, useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
@@ -21,16 +21,16 @@ const Signup = () => {
     show,
     setShow
   } = useContext(AuthContext)
-  // const handleGoogle = () => {
-  //   googleSignUp()
-  //     .then((res) => {
-  //       setUser(res.user)
-  //       toast.success('Google Sign Up Successful')
-  //        navigate('/')
-  //     }).catch(e => {
-  //       console.log(e.message)
-  //     })
-  // }
+  const handleGoogle = () => {
+    googleSignUp()
+      .then((res) => {
+        setUser(res.user)
+        toast.success('Google Sign Up Successful')
+         navigate(form)
+      }).catch(e => {
+        console.log(e.message)
+      })
+  }
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
   const handleSignUp = e => {
     e.preventDefault()
@@ -49,7 +49,7 @@ createUser(email, password)
       displayName: name,
       photoURL: photo
     }).then(()=>{
-         setUser(res.user);
+        setUser(res.user);
     toast.success('Sign up successfully');
     navigate(form);
     })
@@ -116,8 +116,11 @@ createUser(email, password)
               </span>
               </div>
            
-            <button className="btn btn-neutral mt-4">Register</button>
-            {/* <button
+            <button
+       
+            
+            className="btn btn-neutral mt-4">Register</button>
+            <button
               onClick={handleGoogle}
               type="button"
 
@@ -129,9 +132,11 @@ createUser(email, password)
                 className="w-5 h-5"
               />
               Continue with Google
-            </button> */}
+            </button>
 
-            <p>Already have account?<Link className='hover:underline text-blue-500' to='/auth/login'>Login</Link></p>
+            <p>Already have account?
+         <Link to="/auth/login" className="text-blue-600 hover:underline">Login</Link>
+              </p>
           </fieldset>
         </form>
       </div>

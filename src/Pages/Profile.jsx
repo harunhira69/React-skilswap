@@ -72,7 +72,12 @@ useEffect(() => {
   return (
     <div className="min-h-screen flex items-center justify-center bg-linear-to-br from-blue-50 via-gray-50 to-gray-100 px-4 py-10">
       <div className="bg-white shadow-2xl rounded-3xl w-full max-w-md p-8 text-center border border-gray-100 transition-all duration-300 hover:shadow-blue-200">
+              <h1 className="text-3xl font-bold text-gray-800 mb-6 border-b pb-3">
+          My Profile
+        </h1>
+        
         {/* User Image */}
+
         <div className="flex justify-center">
           <img
             src={user?.photoURL || "https://cdn-icons-png.flaticon.com/512/847/847969.png"}

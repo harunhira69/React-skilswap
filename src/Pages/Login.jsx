@@ -29,8 +29,8 @@ const Login = () => {
       .then((res) => {
         setUser(res.user)
         navigate(form)
-        toast.success('Google Sign Up Successful')
-          navigate(form)
+        toast.success('Google Sign in Successful')
+           navigate(form || '/');
       }).catch(e => {
         console.log(e.message)
       })
@@ -124,7 +124,7 @@ const handleForgetPassword = () => {
                 </button>
           <p>
      Don't have an account? 
-  <Link to="/auth/signup" className="text-blue-600 hover:underline">Sign Up</Link>
+<Link to="/auth/signup" className="text-blue-600 hover:underline">Sign Up</Link>
 </p>
 
         </fieldset>
