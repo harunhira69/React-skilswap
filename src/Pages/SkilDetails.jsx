@@ -52,7 +52,6 @@ const email = e.target.email.value;
           <p>💰 Price: ${skill.price}</p>
           <p>⭐ Rating: {skill.rating}</p>
           <p>🏷️ Category:{skill.category}</p>
-          <p>🕒 Duration:120h</p>
           <p>📝 Description:{skill.description}</p>
         </div>
       </div>

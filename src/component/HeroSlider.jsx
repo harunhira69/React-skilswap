@@ -2,8 +2,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import { useContext } from "react";
+import { AuthContext } from "../Context/AuthContext";
+import GlobalLoader from "../Pages/GlobalLoader";
 
 const HeroSlider = () => {
+  const {loading} = useContext(AuthContext)
+  if(loading)return<GlobalLoader></GlobalLoader>
   return (
     <Swiper
       modules={[Autoplay, Pagination]}

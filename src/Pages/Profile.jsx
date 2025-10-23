@@ -1,4 +1,4 @@
-import React, {  useContext, useState } from 'react';
+import React, {  useContext, useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
 import GlobalLoader from './GlobalLoader';
 import { AuthContext } from '../Context/AuthContext';
@@ -16,10 +16,9 @@ const Profile = () => {
       const [gender,setGender]=useState(user?.gender||'');
 
       const[updating,setUpdating] = useState(false)
-          if(!user){
-          toast.error("No user found! Please login to update profile.")
-          return;
-        }
+       useEffect(() => {
+    if (!user) toast.info("No user found! Showing guest profile.");
+  }, [user]);
 
       const handleUpdateProfile = async e=>{
         e.preventDefault()

@@ -12,9 +12,11 @@ const HowItWork = () => {
 
     return (
        <section className="py-16 ">
-      <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
-        How It Works
-      </h2>
+       <h3 className="text-4xl font-bold text-center mb-8">
+          <span className="bg-linear-to-r from-pink-500 via-purple-500 to-blue-500 bg-clip-text text-transparent">
+            How It Works
+          </span>
+        </h3>
 
       <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto px-4">
         {userData.map((step) => (
