@@ -17,10 +17,17 @@ const Navbar = () => {
   navigate('/home')
  }
 
-  const linkClass = ({ isActive }) =>
-    `px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-      isActive ? "bg-indigo-600 text-white" : "hover:bg-indigo-50 hover:text-indigo-700"
-    }`;
+const linkClass = ({ isActive }) =>
+  `
+  px-5 py-2.5 rounded-lg text-sm sm:text-base font-semibold text-center 
+  transition-all duration-300 ease-in-out shadow-sm w-full sm:w-auto
+  ${isActive
+    ? "bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-lg scale-105 hover:scale-110"
+    : "bg-white border border-indigo-500 text-indigo-600 hover:bg-gradient-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 hover:text-white hover:shadow-md"
+  }
+`;
+
+
     if(loading) return <GlobalLoader></GlobalLoader>
 
   return (
@@ -28,28 +35,31 @@ const Navbar = () => {
       {/* Navbar Start */}
       <div className="navbar-start flex items-center gap-3">
         {/* Mobile dropdown */}
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden p-2">
-            <FaBars className="h-5 w-5 text-gray-700" />
-          </label>
-          <ul
-            tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow-lg bg-white rounded-xl w-52 animate-fade-in flex flex-col gap-2"
-          >
-            <li>
-              <NavLink to="/home" className={linkClass}>
-                Home
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to="/profile" className={linkClass}>
-                Profile
-              </NavLink>
-            </li>
-            {/* Include login/signup for mobile if user not logged in */}
-           
-          </ul>
-        </div>
+<div className="dropdown relative z-50">
+  <label tabIndex={0} className="btn btn-ghost lg:hidden p-2">
+    <FaBars className="h-5 w-5 text-gray-700" />
+  </label>
+  <ul
+    tabIndex={0}
+    className="menu menu-sm dropdown-content mt-3 p-3 shadow-lg
+               bg-white rounded-xl w-52 flex flex-col gap-2
+                border border-gray-200
+               z-50"
+  >
+    <li>
+      <NavLink to="/home" className={linkClass}>
+        Home
+      </NavLink>
+    </li>
+    <li>
+      <NavLink to="/profile" className={linkClass}>
+        Profile
+      </NavLink>
+    </li>
+  </ul>
+</div>
+
+
         {/* Logo */}
         <img src={logo} alt="SkillSwap Logo" className="w-10 h-10 rounded-full shadow-sm" />
       </div>

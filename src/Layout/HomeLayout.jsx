@@ -5,7 +5,8 @@ import Footer from "../component/Footer";
 
 const HomeLayout = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-b from-indigo-50 via-purple-50 to-pink-50
+    <div className="flex flex-col min-h-screen 
+    bg-linear-to-b from-indigo-50 via-purple-50 to-pink-50
 ">
       {/* Header / Navbar */}
       <header className="sticky top-0 z-50 shadow-md">

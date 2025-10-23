@@ -24,17 +24,17 @@ const Login = () => {
 
 
 
- const handleGoogleSignIn = () => {
-    googleSignUp()
-      .then((res) => {
-        setUser(res.user)
-        navigate(form)
-        toast.success('Google Sign Up Successful')
-          navigate(form)
-      }).catch(e => {
-        console.log(e.message)
-      })
-  }
+//  const handleGoogleSignIn = () => {
+//     googleSignUp()
+//       .then((res) => {
+//         setUser(res.user)
+//         navigate(form)
+//         toast.success('Google Sign Up Successful')
+//           navigate(form)
+//       }).catch(e => {
+//         console.log(e.message)
+//       })
+//   }
 
 
 
@@ -57,17 +57,21 @@ const Login = () => {
 
 const handleForgetPassword = () => {
   const email = emailRef.current.value;
-  if (email) setLoginEmail(email); // store globally
+  if (email) setLoginEmail(email);
   navigate('/auth/forget-password');
 };
 
   return (
 
 
-    <div className="card 
-     bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 
-    mx-auto w-full max-w-sm p-4
-     shrink-0 shadow-2xl">
+  <div className="">
+  <div className="card 
+  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 
+  backdrop-blur-xl 
+  border border-white/40 shadow-2xl hover:shadow-pink-200
+  transition-all duration-500 
+  mx-auto w-full max-w-sm p-6 rounded-3xl
+  shrink-0">
     
       <div className="card-body">
         <h1 className="text-5xl font-bold">Login now!</h1>
@@ -104,7 +108,7 @@ const handleForgetPassword = () => {
           className="link link-hover">
             Forgot password?</button></div>
           <button className="btn btn-neutral mt-4">Login</button>
-               <button
+               {/* <button
                   type="button"
                   onClick={handleGoogleSignIn}
                   className="flex items-center justify-center gap-3 bg-white text-gray-800 px-5 py-2 rounded-lg w-full font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
@@ -115,7 +119,7 @@ const handleForgetPassword = () => {
                     className="w-5 h-5 "
                   />
                   Continue with Google
-                </button>
+                </button> */}
           <p>
      Don't have an account? 
   <Link to="/auth/signup" className="text-blue-600 hover:underline">Sign Up</Link>
@@ -125,6 +129,7 @@ const handleForgetPassword = () => {
     </form>
       </div>
     </div>
+  </div>
 
   );
 };

@@ -57,7 +57,13 @@ createUser(email, password)
 
   }
   return (
-    <div className="card bg-base-100 mx-auto w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="card 
+  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 
+  backdrop-blur-xl 
+  border border-white/40 shadow-2xl hover:shadow-pink-200
+  transition-all duration-500 
+  mx-auto w-full max-w-sm p-6 rounded-3xl
+  shrink-0">
       <div className="card-body">
         <h1 className="text-4xl font-bold">Register now!</h1>
         <form onSubmit={handleSignUp}>
