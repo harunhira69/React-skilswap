@@ -2,8 +2,9 @@ import React, { use, useRef } from "react";
 import { Link, Navigate, useLocation, useNavigate } from "react-router";
 import 'animate.css';
 import { AuthContext } from "../Context/AuthContext";
-import { toast } from "react-toastify";
+
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const navigate = useNavigate()
@@ -71,7 +72,7 @@ const handleForgetPassword = () => {
   border border-white/40 shadow-2xl hover:shadow-pink-200
   transition-all duration-500 
   mx-auto w-full max-w-sm p-6 rounded-3xl
-  shrink-0">
+  shrink-0 !z-1">
     
       <div className="card-body">
         <h1 className="text-5xl font-bold">Login now!</h1>

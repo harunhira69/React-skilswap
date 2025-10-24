@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router";
 import logo from "../assets/logom.jpg";
 import { AuthContext } from "../Context/AuthContext";
-import { toast } from "react-toastify";
+
 import { FaBars } from "react-icons/fa";
 import NavButton from "./Button";
 import GlobalLoader from "../Pages/GlobalLoader";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const { user, Logout, setUser,loading } = useContext(AuthContext);
@@ -35,7 +36,7 @@ const linkClass = ({ isActive }) =>
       {/* Navbar Start */}
       <div className="navbar-start flex items-center gap-3">
         {/* Mobile dropdown */}
-<div className="dropdown relative z-50">
+<div className="dropdown relative ">
   <label tabIndex={0} className="btn btn-ghost lg:hidden p-2">
     <FaBars className="h-5 w-5 text-gray-700" />
   </label>
@@ -44,7 +45,7 @@ const linkClass = ({ isActive }) =>
     className="menu menu-sm dropdown-content mt-3 p-3 shadow-lg
                bg-white rounded-xl w-52 flex flex-col gap-2
                 border border-gray-200
-               z-50"
+               !z-20 absolute"
   >
     <li>
       <NavLink to="/home" className={linkClass}>

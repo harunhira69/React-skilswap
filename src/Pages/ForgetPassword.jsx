@@ -1,6 +1,7 @@
 import React, { useContext, useRef } from "react";
 import { AuthContext } from "../Context/AuthContext";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+
 
 const ForgetPassword = () => {
   const { resetPassword, loginEmail } = useContext(AuthContext);

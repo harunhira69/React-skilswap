@@ -2,8 +2,9 @@ import React, { useContext} from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { Link, Navigate, useLocation, useNavigate } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
-import { toast } from 'react-toastify';
+
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import toast from 'react-hot-toast';
 
 
 const Signup = () => {

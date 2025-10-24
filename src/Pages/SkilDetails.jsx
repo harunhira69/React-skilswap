@@ -1,7 +1,8 @@
 import React, { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router";
-import { toast } from "react-toastify";
+
 import { AuthContext } from "../Context/AuthContext";
+import toast from "react-hot-toast";
 
 const SkillDetails = () => {
   const skills = useLoaderData(); 

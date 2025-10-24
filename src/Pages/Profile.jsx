@@ -1,7 +1,8 @@
 import React, {  useContext, useEffect, useState } from 'react';
-import { toast } from 'react-toastify';
+
 import GlobalLoader from './GlobalLoader';
 import { AuthContext } from '../Context/AuthContext';
+import toast from 'react-hot-toast';
 
 const Profile = () => {
   const {user, loading, setUser, updateProfiles} = useContext(AuthContext);
@@ -17,7 +18,7 @@ const Profile = () => {
 
       const[updating,setUpdating] = useState(false)
 useEffect(() => {
-  if (!user) toast.info("No user found! Showing guest profile.");
+  if (!user) toast.success("No user found! Showing guest profile.");
 }, [user]);
 
       const handleUpdateProfile = async e=>{
