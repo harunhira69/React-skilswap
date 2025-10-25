@@ -66,7 +66,7 @@ const handleForgetPassword = () => {
   return (
 
 
-  <div className="z-10  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 shrink-0   mx-auto w-full max-w-sm p-6 rounded-3xl ">
+  <div className="  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 shrink-0   mx-auto w-full max-w-sm p-6 rounded-3xl ">
     
       <div className="card-body  ">
         <h1 className="text-3xl font-bold">Login now!</h1>
