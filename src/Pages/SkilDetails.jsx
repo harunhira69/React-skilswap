@@ -8,9 +8,9 @@ const SkillDetails = () => {
   const skills = useLoaderData(); 
   const { id } = useParams(); 
   const {user} = useContext(AuthContext) 
-  console.log(user)    
+  // console.log(user)    
 
-  const skill = skills.find(s => s.skillId == id); // find the clicked skill
+  const skill = skills.find(s => s.skillId == id);
 
   if (!skill) {
     return <p className="text-center text-red-500 mt-10">
@@ -35,7 +35,7 @@ const email = e.target.email.value;
       toast.error("❌ Please enter your registered email.");
       return;
     }
-    console.log(name, email);
+    // console.log(name, email);
     toast.success("Booking Successful!");
     e.target.reset()
 }

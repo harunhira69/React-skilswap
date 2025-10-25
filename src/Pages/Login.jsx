@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 const Login = () => {
   const navigate = useNavigate()
   const location = useLocation()
-  console.log(location)
+  // console.log(location)
   const form = location.state || "/";
   const emailRef = useRef()
   const {signIn,setUser,
@@ -33,7 +33,8 @@ const Login = () => {
         toast.success('Google Sign in Successful')
            navigate(form || '/');
       }).catch(e => {
-        console.log(e.message)
+        // console.log(e.message)
+        toast.error(e.message)
       })
   }
 
@@ -41,10 +42,10 @@ const Login = () => {
 
   const handleLogin = (e)=>{
     e.preventDefault()
-    console.log('yes its working')
+    // console.log('yes its working')
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log(email,password)
+    // console.log(email,password)
     signIn(email,password)
     .then((res)=>{
       setUser(res.user)
@@ -68,7 +69,7 @@ const handleForgetPassword = () => {
   <div className="z-10  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 shrink-0   mx-auto w-full max-w-sm p-6 rounded-3xl ">
     
       <div className="card-body  ">
-        <h1 className="text-5xl font-bold">Login now!</h1>
+        <h1 className="text-3xl font-bold">Login now!</h1>
     <form onSubmit={handleLogin}>
           <fieldset className="fieldset">
           <label className="label">Email</label>

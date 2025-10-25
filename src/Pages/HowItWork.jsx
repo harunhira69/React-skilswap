@@ -7,7 +7,7 @@ const HowItWork = () => {
          .then(response => response.json())
             .then(data => setUserData(data));
       },[])
-      console.log(userData)
+      // console.log(userData)
 
 
     return (

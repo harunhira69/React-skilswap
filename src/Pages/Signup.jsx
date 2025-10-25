@@ -9,7 +9,7 @@ import toast from 'react-hot-toast';
 
 const Signup = () => {
   const location = useLocation()
-    console.log(location)
+    // console.log(location)
     const form = location.state || "/";
 
   
@@ -29,7 +29,7 @@ const Signup = () => {
         toast.success('Google Sign Up Successful')
          navigate(form)
       }).catch(e => {
-        console.log(e.message)
+        // console.log(e.message)
       })
   }
   const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{6,}$/;
@@ -39,7 +39,7 @@ const Signup = () => {
     const photo = e.target.photo.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    console.log({ name, photo, email, password })
+    // console.log({ name, photo, email, password })
     if (!passwordRegex.test(password)) {
       toast.error('Password must contain at least one uppercase, one lowercase, one special character, and be at least 6 characters long.')
       return
@@ -64,7 +64,7 @@ createUser(email, password)
   return (
     <div className="z-10  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 shrink-0   mx-auto w-full max-w-sm p-6 rounded-3xl">
       <div className="card-body">
-        <h1 className="text-4xl font-bold">Register now!</h1>
+        <h1 className="text-3xl font-bold">Register now!</h1>
         <form onSubmit={handleSignUp}>
           <fieldset className="fieldset">
             {/* name */}
