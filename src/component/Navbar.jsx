@@ -45,7 +45,7 @@ const linkClass = ({ isActive }) =>
     className="menu menu-sm dropdown-content mt-3 p-3 shadow-lg
                bg-white rounded-xl w-52 flex flex-col gap-2
                 border border-gray-200
-               !z-20 absolute"
+               z-20 absolute"
   >
     <li>
       <NavLink to="/home" className={linkClass}>

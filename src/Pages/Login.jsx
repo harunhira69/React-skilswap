@@ -65,16 +65,9 @@ const handleForgetPassword = () => {
   return (
 
 
-  <div className="">
-  <div className="card 
-  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 
-  backdrop-blur-xl 
-  border border-white/40 shadow-2xl hover:shadow-pink-200
-  transition-all duration-500 
-  mx-auto w-full max-w-sm p-6 rounded-3xl
-  shrink-0 !z-1">
+  <div className="z-10  bg-linear-to-br from-indigo-100 via-purple-50 to-pink-100 shrink-0   mx-auto w-full max-w-sm p-6 rounded-3xl ">
     
-      <div className="card-body">
+      <div className="card-body  ">
         <h1 className="text-5xl font-bold">Login now!</h1>
     <form onSubmit={handleLogin}>
           <fieldset className="fieldset">
@@ -132,7 +125,7 @@ const handleForgetPassword = () => {
     </form>
       </div>
     </div>
-  </div>
+
 
   );
 };
