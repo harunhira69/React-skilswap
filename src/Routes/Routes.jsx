@@ -10,6 +10,7 @@ import Signup from "../Pages/Signup";
 import PrivateRoute from "./PrivateRoute";
 import Profile from "../Pages/Profile";
 import ForgetPassword from "../Pages/ForgetPassword";
+import About from "../Pages/about/About";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
          {
               path:'/profile',
               element:<Profile></Profile>
+        },
+        {
+          path:'/about',
+          Component:About
         },
       {
         path: "/card-details/:id",

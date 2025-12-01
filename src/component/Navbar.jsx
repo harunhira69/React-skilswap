@@ -57,6 +57,11 @@ const linkClass = ({ isActive }) =>
         Profile
       </NavLink>
     </li>
+      <li>
+      <NavLink to="/about" className={linkClass}>
+        About us
+      </NavLink>
+    </li>
   </ul>
 </div>
 
@@ -78,6 +83,11 @@ const linkClass = ({ isActive }) =>
               Profile
             </NavLink>
           </li>
+              <li>
+      <NavLink to="/about" className={linkClass}>
+        About us
+      </NavLink>
+    </li>
         </ul>
       </div>
 
