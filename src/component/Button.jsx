@@ -12,7 +12,7 @@ const NavButton = ({ to, children }) => {
         
         ${
           isActive
-            ? "bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 text-white shadow-lg scale-105 hover:scale-110"
+            ? "bg-indigo-500 text-white shadow-lg scale-105 hover:scale-110"
             : "bg-white border border-indigo-500 text-indigo-600 hover:bg-linear-to-r hover:from-indigo-500 hover:via-purple-500 hover:to-pink-500 hover:text-white hover:shadow-xl"
         }
         `

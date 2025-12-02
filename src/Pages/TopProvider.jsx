@@ -36,7 +36,8 @@ const TopProvider = ({top,aosDelay = 0}) => {
   </div>
 
   {/* Action Button */}
-  <button className="mt-3 bg-blue-500 text-white px-4 py-2 rounded-xl font-semibold hover:bg-blue-600 transition-colors">
+  <button className="mt-3
+    text-white px-4 py-2 rounded-xl font-semibold bg-indigo-500 transition-colors">
     View Profile
   </button>
 </div>

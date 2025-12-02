@@ -11,6 +11,8 @@ import PrivateRoute from "./PrivateRoute";
 import Profile from "../Pages/Profile";
 import ForgetPassword from "../Pages/ForgetPassword";
 import About from "../Pages/about/About";
+import Allskill from "../Pages/Allskill/Allskill";
+import ContactPage from "../Pages/ContactPage/ContactPage";
 
 const router = createBrowserRouter([
   {
@@ -44,6 +46,16 @@ const router = createBrowserRouter([
         {
           path:'/about',
           Component:About
+        },
+        {
+          path:'/allSkills',
+          element:<Allskill></Allskill>
+
+        },
+        {
+          path:'/contact',
+          Component:ContactPage
+
         },
       {
         path: "/card-details/:id",
