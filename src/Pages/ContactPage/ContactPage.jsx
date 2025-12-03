@@ -6,9 +6,13 @@ const ContactPage = () => {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-extrabold text-gray-900 mb-2">
-            Contact Us
-          </h1>
+        <h1
+  className="text-4xl font-extrabold text-center mb-6
+  bg-linear-to-r from-[#4C1D95] via-[#4338CA] to-[#2563EB]
+  text-transparent bg-clip-text drop-shadow-xl"
+>
+  Contact Us
+</h1>
           <p className="text-lg text-gray-600">
             We’d love to hear from you! Fill out the form below or reach us via contact info.
           </p>

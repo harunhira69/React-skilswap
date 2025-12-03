@@ -40,7 +40,19 @@ const Allskill = () => {
 
   return (
     <div className="px-6 lg:px-20 py-12">
-      <h1 className="text-3xl font-bold text-center mb-6">Explore Skills</h1>
+<h1 className="text-4xl font-extrabold text-center mb-6
+bg-linear-to-r from-[#4C1D95] via-[#4338CA] to-[#2563EB]
+text-transparent bg-clip-text drop-shadow-xl">
+  Explore Skills
+</h1>
+
+
+
+
+
+
+
+
 
       {/* Filters */}
       <div className="flex flex-col md:flex-row justify-center gap-4 mb-10">

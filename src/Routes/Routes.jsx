@@ -21,12 +21,13 @@ import PrivacyPolicy from "../Pages/FooterPage/PrivacyPolicy";
 import TermsOfService from "../Pages/FooterPage/TermsOfService";
 import Jobs from "../Pages/FooterPage/Jobs";
 import PressKit from "../Pages/FooterPage/PressKit";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomeLayout></HomeLayout>,
-    errorElement:<h3>404 Not Found</h3>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
       {
         index: true, // default route
@@ -86,9 +87,9 @@ const router = createBrowserRouter([
         },
       {
         path: "/card-details/:id",
-        element: <PrivateRoute>
+        element: 
           <SkilDetails />
-        </PrivateRoute>,
+       ,
         loader: async () => {
           const res = await fetch("/skill.json");
           const data = await res.json();
