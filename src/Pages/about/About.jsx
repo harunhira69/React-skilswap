@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router";
+
 const About = () => {
+  const navigate = useNavigate();
   return (
     <div className="px-6 lg:px-20 py-12 text-gray-800">
 
@@ -78,7 +81,10 @@ const About = () => {
         <p className="text-gray-700 mb-6 max-w-2xl mx-auto">
           Join SkillSwap today to teach, learn, and connect with your local community.
         </p>
-        <button className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold hover:bg-indigo-700 transition-colors">
+        <button 
+        onClick={()=>navigate('/allSkills')}
+        className="bg-indigo-600 text-white px-6 py-3 rounded-xl font-semibold
+         hover:bg-indigo-700 transition-colors">
           Explore Skills
         </button>
       </section>
